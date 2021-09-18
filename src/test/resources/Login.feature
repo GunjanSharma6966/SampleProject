@@ -24,7 +24,4 @@ Feature: Launch Google application
   Scenario: To print all links on page
     Given the user launches demoblaze application
     Then the user prints all links starting with s
-
-    @test4
-    Scenario : To navigate to toolsqa and hover
-      Given the user launches toolsqa
+    Then browser is quit

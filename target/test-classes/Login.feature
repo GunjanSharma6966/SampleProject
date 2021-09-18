@@ -24,3 +24,4 @@ Feature: Launch Google application
   Scenario: To print all links on page
     Given the user launches demoblaze application
     Then the user prints all links starting with s
+    Then browser is quit

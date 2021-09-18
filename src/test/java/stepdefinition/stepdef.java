@@ -157,5 +157,10 @@ public class stepdef extends TestingBase {
 
     }
 
+    @Then("browser is quit")
+    public void quit(){
+            driver.quit();
+    }
+
     }
 

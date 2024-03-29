@@ -1,3 +1,5 @@
 RunnerTest.class
 stepdefinition\stepdef.class
 stepdefinition\TestingBase.class
+util\ExcelRead.class
+util\readYml.class

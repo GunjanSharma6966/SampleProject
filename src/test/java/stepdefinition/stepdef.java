@@ -8,14 +8,13 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 import util.ExcelRead;
 import util.readYml;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -24,7 +23,11 @@ public class stepdef extends TestingBase {
 
    //SelfHealingDriver driver = (SelfHealingDriver) TestingBase.getDriver();
     WebDriver driver =  TestingBase.getDriver();
-   WebDriverWait wait = new WebDriverWait(driver, 10);
+    Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+            .withTimeout(Duration.ofSeconds(30))
+            .pollingEvery(Duration.ofSeconds(5))
+            .ignoring(NoSuchElementException.class);
+
 
 
         @Given("^the user launches demoblaze application$")

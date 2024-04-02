@@ -92,6 +92,18 @@
         <artifactId>snakeyaml</artifactId>
         <version>1.29</version> <!-- Or the latest version available -->
     </dependency>
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>7.0.0</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-junit</artifactId>
+        <version>7.0.0</version>
+        <scope>test</scope>
+    </dependency>
 
 
     <dependency>
@@ -153,6 +165,17 @@
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+                <plugin>
+                    <groupId>io.cucumber</groupId>
+                    <artifactId>cucumber-maven-plugin</artifactId>
+                    <version>7.0.0</version>
+                    <configuration>
+                        <!-- Specify the location of your feature files -->
+                        <featuresDirectory>features</featuresDirectory>
+                        <!-- Specify the location of your step definitions -->
+                        <glue>stepdefinition</glue>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
